@@ -1,0 +1,14 @@
+1. input() always returns data of type _______________.    =STRING
+
+2. The function used to check the data type of a variable is _______________.  =type
+
+3. Convert a string to an integer using the _______________ function, and to a float using the _______________ function. = str() , float()
+ 
+4. In Python, ** is the operator for _______________, and // is the operator for _______________. =EXPONENT(RAISED TO THE POWER) ,  FLOOR DIVISION
+
+5. % is called the _______________ operator. It gives the _______________.  =MODULUS , REMAINDER
+
+6. A single line comment in Python starts with the symbol _______________.  =# 
+
+7. Write one rule for naming a variable in Python (something that is not allowed).  =VARIABLE CANNOT HAVE ANY SPECIAL CHAR OTHER THAN UNDERSCORE(_)
+
