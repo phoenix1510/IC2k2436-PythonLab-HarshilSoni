@@ -1,0 +1,13 @@
+Write your answer before you run the code.
+1) print(2 + 3 * 4 - 1)                  Your answer: ______  =13
+2) print(10 % 3 + 2 ** 2)                Your answer: ______  =5
+3) print((5 + 3) / 2 == 4)               Your answer: ______  =True
+4) print(type(5 / 2))                    Your answer: ______  = float, print will show <class 'float'>
+5) print("Python"[1:4])                  Your answer: ______  =yth
+6) print("Hi\tThere\nBye")               Your answer: ______  
+
+Answer to 6)
+[
+Hi     There
+Bye
+]        ==OUTPUT WILL BE THIS 
