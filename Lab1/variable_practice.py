@@ -1,3 +1,4 @@
+""" Declare variables for your name, age, height and whether you are a student (True/False). Print each variable along with its type using type()."""
 Name="Harshil Soni"
 Age=20
 Height=178.5 #in cm
