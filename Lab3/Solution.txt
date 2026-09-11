@@ -1,0 +1,252 @@
+Snippet 1 – 
+def find_max(arr):
+    max_val = arr[0]
+    for i in range(1, len(arr)):
+        if arr[i] > max_val:
+            max_val = arr[i]
+    return max_val
+
+Time: O(n) | Space: O(1)
+Justify: Array ko sirf ek baar loop kar rahe hain (n-1 comparisons), so kam time lagta hai. Extra space bas ek variable (max_val) ka use ho raha hai, isliye constant space.
+
+Snippet 2 –
+def has_duplicate(arr):
+    for i in range(len(arr)):
+        for j in range(i + 1, len(arr)):
+            if arr[i] == arr[j]:
+                return True
+    return False
+
+Time: O(n²) | Space: O(1)
+Justify: nested loops hain jisme har element ko baaki sab elements se compare kar rahe hain, 
+ n*(n-1)/2 comparisons ≈ O(n²). space constant kyuki isme koi extra variables vgera nhi hai
+
+Snippet 3 – 
+def sum_digits(n):
+    if n == 0:
+        return 0
+    return n % 10 + sum_digits(n // 10)
+
+Time: O(log n) | Space: not sure
+Justify: space less kyuki looping nahi hai, to checks log n 
+
+Snippet 4 – 
+def print_pairs(arr):
+    n = len(arr)
+    result = []
+    for i in range(n):
+        for j in range(n):
+            result.append((arr[i], arr[j]))
+    return result
+
+Time: O(n²) | Space: O(n)
+Justify: nested for loopps hai to n2 checks aur sab store result array me honge to m elements ,
+
+Snippet 5 – 
+def binary_search(arr, target):
+    low, high = 0, len(arr) - 1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+
+Time: O(log n) | Space: O(1)
+Justify: Har iteration mein search range aadha ho jata hai (low-high), so log n steps lagte hain. Only 3 variables use hue to constant space.
+
+Snippet 6 – 
+ 
+def matrix_multiply(a, b):
+    n = len(a)
+    result = [[0] * n for _ in range(n)]
+    for i in range(n):
+        for j in range(n):
+            for k in range(n):
+                result[i][j] += a[i][k] * b[k][j]
+    return result
+
+Time: O(n³) | Space: O(n²)
+Justify: Teen nested loops (i, j, k) hain, har ek n tak chalta hai, to n3  time , aur matrix nxm elements ka hota hai to n2 space
+
+Snippet 7 -
+def to_sparse(matrix):
+    triples = []
+    for r in range(len(matrix)):
+        for c in range(len(matrix[0])):
+            if matrix[r][c] != 0:
+                triples.append((r, c, matrix[r][c]))
+    return triples
+
+Time: O(m*n) | Space: O(m)
+Justify: Poore matrix (m rows, n columns) ko traverse kar rahe hain har cell check karne ke liye, so mxn time. List hai jisme sare k elements aa rhe hai to (m) space.
+
+Snippet 8 – 
+def process(arr):
+    n = len(arr)
+    for i in range(n):
+        print(arr[i])
+    for j in range(n):
+        for k in range(n):
+            print(arr[j], arr[k])
+
+Time: O(n²)
+Justify: second loop me nested loop ho to nxn iterations = n2 time , aur koi variable ya DS nhi hai to no space complexity
+
+Snippet 9 – 
+def check_first_ten(arr):
+    for i in range(len(arr)):
+        for j in range(10):
+            if arr[i] == j:
+                return True
+    return False
+
+Time: O(n)
+Justify: Andar wala loop hamesha fixed 10 baar chalta hai (constant), bahar wala loop n baar chalta hai, so total = n * 10 = O(n) (constant factor drop ho jata hai Big-O mein).
+
+Snippet 10 – 
+def reverse_new(arr):
+    reversed_arr = []
+    for i in range(len(arr) - 1, -1, -1):
+        reversed_arr.append(arr[i])
+    return reversed_arr
+
+Time: O(n) | Space: O(n)
+Justify: ek loop = n iterations, aur ek array = n elements 
+
+Snippet 11 – 
+def reverse_in_place(arr):
+    left, right = 0, len(arr) - 1
+    while left < right:
+        arr[left], arr[right] = arr[right], arr[left]
+        left += 1
+        right -= 1
+    return arr
+
+Time: O(n) | Space: O(1)
+Justify:  while loop = n operations (iss case me n/2 hai kyuki 2 pointer approach hai) , aur koi naya DS nhii hai pr array ko replace krke return kiya hai = constant space
+
+Snippet 12 –
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    return n * factorial(n - 1)
+
+Time: O(n) | Space: O(n)
+Justify: recursive call loop ki tarah hota hai aur kyuki n times call ho rha isiliye time – n , aur har baar naya result return ho rha isiliye space - n
+
+Snippet 13 – 
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+Time: O(2ⁿ) | Space: O(n)
+Justify: Har call do aur calls ko trigger karti hai (fib(n-1) aur fib(n-2)), so ek binary tree jaisa banta hai calls ka, jiska total nodes ≈ O(2ⁿ). Lekin space O(n) hi lagega kyunki ek time pe max depth n tak ki call stack hoti hai (tree ki height).  -> (ye research kiya tha)
+
+Snippet 14 – 
+def count_pairs_with_sum(arr, target):
+    seen = set()
+    count = 0
+    for num in arr:
+        if target - num in seen:
+            count += 1
+        seen.add(num)
+    return count
+
+Time: O(n) | Space: O(n)
+Justify: Array ko sirf ek baar traverse kar rahe hain, aur set mein lookup/insert O(1) average time leta hai, so total O(n). "seen" set mein worst case sab n elements store ho sakte hain, isliye space O(n).
+
+Snippet 15 – 
+def print_all_subsets(arr):
+    n = len(arr)
+    for i in range(2 ** n):
+        subset = []
+        for j in range(n):
+            if i & (1 << j):
+                subset.append(arr[j])
+        print(subset)
+
+Time: O(n · 2ⁿ)
+Justify: Total 2^n subsets possible hote hain (outer loop), aur har subset banane ke liye andar wala loop n baar chalta hai bits check karne ke liye, so total = O(n * 2^n).
+
+Snippet 16 – 
+def merge_sorted(a, b):
+    result = []
+    i = j = 0
+    while i < len(a) and j < len(b):
+        if a[i] <= b[j]:
+            result.append(a[i])
+            i += 1
+        else:
+            result.append(b[j])
+            j += 1
+    result.extend(a[i:])
+    result.extend(b[j:])
+    return result
+
+Time: O(n + m) | Space: O(n + m)
+Justify: Dono arrays (size n aur m) ko ek saath ek baar traverse kar rahe hain merge karne ke liye, so linear time in combined size. Result list mein saare elements dono arrays ke store ho rahe hain, isliye space bhi O(n+m).
+
+Snippet 17 -
+def is_palindrome(s):
+    return s == s[::-1]
+
+Time: O(n) | Space: O(n)
+Justify: String reverse karna (s[::-1]) internally O(n) time leta hai kyunki har character copy hota hai. Reverse karte waqt ek naya string bhi bann raha hai memory mein, isliye space O(n).
+
+Snippet 18 – 
+def flatten(matrix):
+    flat = []
+    for row in matrix:
+        for val in row:
+            flat.append(val)
+    return flat
+
+Time: O(m·n) | Space: O(m·n)
+Justify: Matrix ke har row aur column ko visit kar rahe hain (m rows, n cols each), so total mn elements process ho rahe hain. Sab elements ek naye flat list mein daal rahe hain, isliye space bhi O(mn).
+
+Snippet 19 –
+def power(base, exp):
+    if exp == 0:
+        return 1
+    return base * power(base, exp - 1)
+
+Time: O(n) | Space: O(n)
+Justify: Function recursively n baar call ho raha hai (exp ko 1-1 kam karte hue), so linear time. Recursion stack bhi depth n tak jaati hai, isliye space O(n).
+
+Snippet 20 – 
+def fast_power(base, exp):
+    if exp == 0:
+        return 1
+    half = fast_power(base, exp // 2)
+    if exp % 2 == 0:
+        return half * half
+    return half * half * base
+
+Time: O(log n) | Space: O(log n)
+Justify: Har recursive call mein exponent ko aadha kar rahe hain (exp//2), so calls ki total number = log(exp). Recursion stack depth bhi log(exp) hoti hai, isliye space bhi O(log n).
+
+Snippet 21 – 
+def has_common_element(a, b):
+    for x in a:
+        for y in b:
+            if x == y:
+                return True
+    return False
+
+Time: O(n · m) | Space: O(1)
+Justify: Har element 'a' ko poori array 'b' ke saath compare kar rahe hain nested loop mein, so time = size(a) * size(b) = O(n*m). Koi extra data structure use nahi kar rahe, isliye space constant.
+
+Snippet 22 – 
+def build_frequency_map(arr):
+    freq = {}
+    for val in arr:
+        freq[val] = freq.get(val, 0) + 1
+    return freq
+
+Time: O(n) | Space: O(n)
+Justify: Array ko ek baar traverse kar rahe hain aur dictionary mein insert/update O(1) average leta hai. Worst case sab elements unique honge to dictionary mein (n) entries store hongi, isliye space bhi O(n).
