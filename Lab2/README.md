@@ -18,9 +18,8 @@ The outer loop controls the rows, while the inner loop prints the elements in ea
 **Sample Input / Output:**
 
 ```text
-(base) harshil@MacBook-Air Lab-02 % python square.py
 
-Enter how many rows you want: 5
+Enter number of rows: 5
 
 *  *  *  *  *
 *  *  *  *  *
@@ -42,7 +41,6 @@ The program uses nested loops where the outer loop controls the number of rows a
 **Sample Input / Output:**
 
 ```text
-(base) harshil@MacBook-Air Lab-02 % python triangle.py
 
 Enter number of rows: 5
 
@@ -66,9 +64,8 @@ The program uses nested loops to print spaces and stars. The number of stars inc
 **Sample Input / Output:**
 
 ```text
-(base) harshil@MacBook-Air Lab-02 % python right_triangle.py
 
-Enter how many rows you want: 5
+Enter number of rows: 5
 
 *
 * *
@@ -92,7 +89,7 @@ The number of spaces remains appropriately adjusted so that each row is shifted,
 **Sample Input / Output:**
 
 ```text
-Enter how many rows you want: 5
+Enter number of rows: 5
 
     * * * * *
    * * * * *
@@ -114,9 +111,8 @@ The program uses nested loops where the outer loop controls the rows and the inn
 **Sample Input / Output:**
 
 ```text
-(base) harshil@MacBook-Air Lab-02 % python inverse_triangle.py
 
-Enter how many rows you want: 5
+Enter number of rows: 5
 
 * * * * *
 * * * *
