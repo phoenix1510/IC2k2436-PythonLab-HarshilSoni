@@ -1,0 +1,7 @@
+Q 1. What do you think makes one piece of code faster than another that produces the same output?
+
+I think it mostly depends on how efficiently the code solves the problem. If one program can avoid repeating calculations or unnecessary steps, it should be faster than one that does the same work over and over.
+
+Q 2. Name any Python function or technique you already know that helps avoid repeating work.
+
+Python dictionaries (dict) can help avoid repeatedly searching through a list because they allow us to look up values quickly using keys.
